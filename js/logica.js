@@ -40,6 +40,12 @@ var cesar=cesar || (function(){
  })();
  
  function codificar(){
+      alert("Cadena "+document.getElementById("cadena").value.toUpperCase() )
+      alert("Desp "+document.getElementById("desp").value)
+      if(document.getElementById("cadena").value.toUpperCase() == " " || document.getElementById("desp").value == 0){
+        alert("El campo cadena y el desplazamiento no pueden estar vacios")
+        return false;
+      }
      document.getElementById("resultado").innerHTML = cesar.encode(
          document.getElementById("cadena").value.toUpperCase(), document.getElementById("desp").value).toLowerCase();
  }

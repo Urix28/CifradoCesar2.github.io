@@ -36,6 +36,35 @@ function validacion(evt,input){
           }
     }
 }
+
+function validaLetras(evt,input){
+    var c = window.Event ? evt.which : evt.keyCode;    
+    var chark = String.fromCharCode(c);
+    var tempValue=input.value+chark;
+    
+    if(c >= 97 && c <= 122){
+        if(filter2(tempValue)=== false){
+            alert("Solo puedes letras en la cadena");
+            return false;
+        }else{       
+            return true;
+        }
+       }
+    if(c >= 65 && c <= 90){
+         if(filter2(tempValue)=== false){
+             alert("Solo puedes letras en la cadena");
+             return false;
+         }else{       
+             return true;
+         }
+        }else{
+            alert("Solo puedes letras en la cadena");
+            return false;
+        }
+     
+        
+ }
+
 function validacionNumbers(evt){
    var c = (evt.which) ? evt.which : evt.keyCode;
    if(c==8 || c==13){
@@ -71,4 +100,18 @@ function filter(__val__){
     }
     
 }
+
+
+function filter2(__val__){
+    var preg =  (/([a-z])/ig);
+    if(preg.test(__val__) === true){
+        //var preg = /^\-{0,1}?[0-9]+\.{0,1}?[0-9]{0,2}?)$/g; 
+        
+        return true;
+    }else{
+       return false;
+    }
+    
+}
+ 
  
